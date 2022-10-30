@@ -53,35 +53,39 @@
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
-    <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyBrickHouses\Scripts\ModelCustomizer.cs" />
-    <Compile Include="Assets\Scripts\CamController.cs" />
-    <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyFencePack\Scripts\DoorController.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
+    <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXFireProjectile.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXEffectCycler.cs" />
     <Compile Include="Assets\Player\Scripts\Player\Follow.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
-    <Compile Include="Assets\Player\Scripts\Player\State\WeaponStatus.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Scripts\ETFXLightFade.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
+    <Compile Include="Assets\FullscreenMode.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXEffectCycler.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
+    <Compile Include="Assets\Player\Scripts\Player\State\WeaponStatus.cs" />
+    <Compile Include="Assets\Quit_Game.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXEffectControllerPooled.cs" />
     <Compile Include="Assets\Player\Scripts\Player\Controller\PlayerController.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Scripts\ETFXRotation.cs" />
     <Compile Include="Assets\Player\Scripts\Player\State\PlayerStatus.cs" />
-    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXEffectController.cs" />
-    <Compile Include="Assets\Quit_Game.cs" />
-    <Compile Include="Assets\HP_bar.cs" />
     <Compile Include="Assets\GotoMain.cs" />
-    <Compile Include="Assets\FullscreenMode.cs" />
-    <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\Scripts\CamController.cs" />
+    <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
+    <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyFencePack\Scripts\DoorController.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXEffectController.cs" />
+    <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyBrickHouses\Scripts\ModelCustomizer.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
+    <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
+    <Compile Include="Assets\HP_bar.cs" />
+    <Compile Include="Assets\Scripts\KYR\BossSkill.cs" />
+    <Compile Include="Assets\Scripts\KYR\BossMonsterCtrl.cs" />
+    <Compile Include="Assets\Scripts\KYR\DemoPlayer.cs" />
+    <Compile Include="Assets\Scripts\KYR\BossMonster.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
