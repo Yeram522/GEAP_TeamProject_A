@@ -20,12 +20,12 @@ public class BossMonster : MonoBehaviour
         AttackN,
         Rotate
     }
+    public CoolTimeHndl skillHndl;
 
     /// <summary>
     /// Boss Information
     /// </summary>
     public Element m_type;
-
     public GameObject m_bossHand;
     public GameObject m_throughObjectInHand; //투척 오브젝트 prefab
     public GameObject m_throughObjectPrefab; //투척 오브젝트 prefab
@@ -37,9 +37,6 @@ public class BossMonster : MonoBehaviour
     //공기 팡 damageGuid
     public GameObject m_bombguidPrefab;
     public GameObject m_EffectBombParticle;
-
-
-    private List<BossSkill> m_NormalSkills; //보스가 가진 기본 패턴 
 
     private List<BossSkill> m_AdvancedSkills;//보스가 가진 특수 패턴
 
@@ -63,10 +60,7 @@ public class BossMonster : MonoBehaviour
         m_Animator = this.transform.GetComponent<Animator>();
         m_isChasing = true;
         m_throughObjectInHand.SetActive(false);
-        initBossNormalSkills();
-        initBossAdvanceSkills();
-
-
+        setBossSkillSets(m_type);
     }
 
     // Update is called once per frame
@@ -74,48 +68,40 @@ public class BossMonster : MonoBehaviour
     {
         if (m_isChasing)
             Normal_Chasing();
+    }
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Special_02Bombing();
-           // Special_BossDefence();
-            //Special_CreateTornado();
-            //Normal_Throwing();
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            //Special_02Bombing();
-             Special_BossDefence();
-            //Special_CreateTornado();
-            //Normal_Throwing();
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            //Special_02Bombing();
-            // Special_BossDefence();
-            Special_CreateTornado();
-            //Normal_Throwing();
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            //Special_02Bombing();
-            // Special_BossDefence();
-            //Special_CreateTornado();
-            Normal_Throwing();
-        }
+    private void setBossSkillSets(Element element)
+    {
+        initBossNormalSkills();
+        initBossAdvanceSkills(element);
     }
 
     private void initBossNormalSkills()
     {
-
+        skillHndl.m_NormalSkills = new List<BossSkill>();
+        skillHndl.m_NormalSkills.Add(new BossSkill(10, 15, Special_02Bombing));
+        skillHndl.m_NormalSkills.Add(new BossSkill(10, 10, Special_BossDefence));
+        skillHndl.m_NormalSkills.Add(new BossSkill(10, 8, Special_CreateTornado));
+        skillHndl.m_NormalSkills.Add(new BossSkill(10, 5, Normal_Throwing));
     }
 
-    private void initBossAdvanceSkills()
+    private void initBossAdvanceSkills(Element element)
     {
-
+        switch(element)
+        {
+            case Element.Ice:
+                break;
+            case Element.Metal:
+                break;
+            case Element.Rock:
+                break;
+            case Element.Water:
+                break;
+            case Element.Lava:
+                break;
+            case Element.Dia:
+                break;
+        }
     }
 
     /// <summary>
@@ -124,20 +110,30 @@ public class BossMonster : MonoBehaviour
     private void Normal_Throwing()
     {
         m_isChasing = false;
-        m_throughObjectInHand.SetActive(true);
+
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        transform.LookAt(player);
+        if (Vector3.Distance(transform.position, player.position) >= 10)
+        {
+            m_throughObjectInHand.SetActive(true);
+
+        }
 
         m_Animator.SetInteger("AttackType", (int)AnimationType.Attack);
         m_Animator.SetTrigger("IsAttack");
-
 
     }
 
     //Animation Event 함수
     private void AE_throwObject()
     {
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        transform.LookAt(player);
         m_throughObjectInHand.SetActive(false);
-        StartCoroutine(throwing());
-
+        if (Vector3.Distance(transform.position, player.position) >= 10)
+        {  
+            StartCoroutine(throwing());
+        }
     }
 
     IEnumerator throwing()
@@ -280,7 +276,6 @@ public class BossMonster : MonoBehaviour
         StartCoroutine(ParticalDestroyCounter(spawned, 4.0f));
     }
 
-
     private void Special_02Bombing()
     {
         //Projection Prefab Instantiate
@@ -337,4 +332,7 @@ public class BossMonster : MonoBehaviour
             StartCoroutine(ParticalDestroyCounter(effect, 4.0f));//s 뒤 destroy
         }
     }
+
+
+
 }

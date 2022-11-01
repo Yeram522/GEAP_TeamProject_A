@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossSkill : MonoBehaviour
+[System.Serializable]
+public class BossSkill 
 {
-    private int m_damage; //피격 데미지.
-    private int m_coolTime; // 쿨 타임.
-    private bool m_Active; // 스킬 활성 상태
+    public int m_damage; //피격 데미지.
+    public int m_coolTime; // 쿨 타임.
+    public bool m_Active; // 스킬 활성 상태
     public delegate void m_Skill();
-
-    public void startSkill(m_Skill _detail)
+    m_Skill skill;
+    
+    public BossSkill(int damage, int coolTime, m_Skill _detail)
     {
-        _detail();
-        StartCoroutine(inCoolTime());
+        m_damage = damage;
+        m_coolTime = coolTime;
+        skill = _detail;
+
+    }
+
+    public void startSkill(CoolTimeHndl hndl)
+    {
+        skill();
+        hndl.StartCoroutine(inCoolTime());
     }
 
     IEnumerator inCoolTime()

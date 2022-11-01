@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,11 +47,14 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.16</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2020.3.21f1</UnityVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
@@ -61,17 +64,21 @@
     <Compile Include="Assets\Player\Epic Toon FX\Scripts\ETFXLightFade.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXButtonScript.cs" />
     <Compile Include="Assets\FullscreenMode.cs" />
+    <Compile Include="Assets\Scripts\KYR\BossMonsterCtrl.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\ParticleEffectsLibrary.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXMouseOrbit.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXEffectCycler.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
     <Compile Include="Assets\Player\Scripts\Player\State\WeaponStatus.cs" />
     <Compile Include="Assets\Quit_Game.cs" />
+    <Compile Include="Assets\Scripts\KYR\BossMonster.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXEffectControllerPooled.cs" />
     <Compile Include="Assets\Player\Scripts\Player\Controller\PlayerController.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Scripts\ETFXRotation.cs" />
+    <Compile Include="Assets\Scripts\KYR\BossSkill.cs" />
     <Compile Include="Assets\Player\Scripts\Player\State\PlayerStatus.cs" />
+    <Compile Include="Assets\Scripts\KYR\DemoPlayer.cs" />
     <Compile Include="Assets\GotoMain.cs" />
     <Compile Include="Assets\Scripts\CamController.cs" />
     <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
@@ -82,10 +89,7 @@
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\HP_bar.cs" />
-    <Compile Include="Assets\Scripts\KYR\BossSkill.cs" />
-    <Compile Include="Assets\Scripts\KYR\BossMonsterCtrl.cs" />
-    <Compile Include="Assets\Scripts\KYR\DemoPlayer.cs" />
-    <Compile Include="Assets\Scripts\KYR\BossMonster.cs" />
+    <Compile Include="Assets\Scripts\KYR\CoolTimeHndl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -687,9 +691,6 @@
     </Reference>
     <Reference Include="System.Xml.Serialization">
       <HintPath>D:\2020.3.21f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
