@@ -228,9 +228,8 @@ public class PlayerController : MonoBehaviour
         sa_dodge = false;
 
         // 순간이동 이펙트 1회 출력
-        ef_dodge.SetActive(true);
-        Invoke("EndDodge", 1.0f);
-        rigid.AddForce(moveVec * 200, ForceMode.Impulse);
+
+        rigid.AddForce(Vector3.forward * 100, ForceMode.Impulse);
  
     }
 
@@ -303,12 +302,6 @@ public class PlayerController : MonoBehaviour
     {
         ef_buf.SetActive(false);
     }
-
-    void EndDodge()
-    {
-        ef_dodge.SetActive(false);
-    }
-
     void EndMeleeSkill()
     {
         ef_meleeSkill.SetActive(false);
