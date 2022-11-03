@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 224614139496721199}
   - component: {fileID: 224614139496721193}
   - component: {fileID: 224614139496721192}
+  - component: {fileID: 2717785698718092857}
   m_Layer: 0
   m_Name: SwordWhirlwindYellow
   m_TagString: Untagged
@@ -4804,6 +4805,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!135 &2717785698718092857
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224614139496721198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &224614140094418229
 GameObject:
   m_ObjectHideFlags: 0
@@ -9662,7 +9676,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 224614140562403300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec2b6ecf2fa65d45a63e63411089ebe, type: 3}
+  m_Script: {fileID: 11500000, guid: 55c661ccc81226b48ac708d082bca7ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10

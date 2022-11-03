@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     // Start is called before the first frame update
+    int hp;
+    int damage;
+
     void Start()
     {
         
