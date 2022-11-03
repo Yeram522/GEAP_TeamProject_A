@@ -87,9 +87,9 @@
     <Compile Include="Assets\02_CityAsset\BrokenVector\LowPolyBrickHouses\Scripts\ModelCustomizer.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXProjectileScript.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\ETFXSceneManager.cs" />
+    <Compile Include="Assets\Scripts\KYR\CoolTimeHndl.cs" />
     <Compile Include="Assets\Player\Epic Toon FX\Demo\Scripts\VFX Library\PEButtonScript.cs" />
     <Compile Include="Assets\HP_bar.cs" />
-    <Compile Include="Assets\Scripts\KYR\CoolTimeHndl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

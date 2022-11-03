@@ -113,7 +113,7 @@ public class BossMonster : MonoBehaviour
 
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         transform.LookAt(player);
-        if (Vector3.Distance(transform.position, player.position) >= 10)
+        if (Vector3.Distance(transform.position, player.position) >= 1)
         {
             m_throughObjectInHand.SetActive(true);
 
@@ -130,7 +130,7 @@ public class BossMonster : MonoBehaviour
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         transform.LookAt(player);
         m_throughObjectInHand.SetActive(false);
-        if (Vector3.Distance(transform.position, player.position) >= 10)
+        if (Vector3.Distance(transform.position, player.position) >= 1)
         {  
             StartCoroutine(throwing());
         }
@@ -160,6 +160,8 @@ public class BossMonster : MonoBehaviour
 
         throws.transform.GetComponent<Rigidbody>().useGravity = true;
 
+        Destroy(throws, 5.0f);
+   
         //투척하는 모션에서 오브젝트가 손에서 사라진 즉시 함수가 발동 됨.
         yield return null;
     }
@@ -238,7 +240,7 @@ public class BossMonster : MonoBehaviour
 
     IEnumerator spawnTornadoRnd(Vector3 direction)
     {
-        GameObject spawned = Instantiate(m_EffectTornado, direction * 5.0f, m_EffectTornado.transform.rotation);
+        GameObject spawned = Instantiate(m_EffectTornado, transform.position + direction * 5.0f, m_EffectTornado.transform.rotation);
         StartCoroutine(ParticalDestroyCounter(spawned, 4.0f));
         while (spawned != null)
         {
@@ -315,6 +317,7 @@ public class BossMonster : MonoBehaviour
             float upadate = m_damageGuidGraphic[1].transform.position.y + 0.05f;
             m_damageGuidGraphic[1].transform.position =
                 new Vector3(m_damageGuidGraphic[0].transform.position.x, upadate, m_damageGuidGraphic[0].transform.position.z);
+            yield return new WaitForSeconds(0.005f);
             yield return new WaitForEndOfFrame();
         }
 
@@ -328,7 +331,7 @@ public class BossMonster : MonoBehaviour
         for (int i = 0; i < effectCount; i++)
         {
             Vector3 direction = Quaternion.AngleAxis(rot[i], Vector3.up) * dir;//벡터 정규화
-            GameObject effect = Instantiate(m_EffectBombParticle, direction * dis, Quaternion.LookRotation(direction));
+            GameObject effect = Instantiate(m_EffectBombParticle, transform.position + direction * dis, Quaternion.LookRotation(direction));
             StartCoroutine(ParticalDestroyCounter(effect, 4.0f));//s 뒤 destroy
         }
     }

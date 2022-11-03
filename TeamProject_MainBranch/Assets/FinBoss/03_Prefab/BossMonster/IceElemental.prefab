@@ -20174,6 +20174,7 @@ GameObject:
   - component: {fileID: 8352882330272964357}
   - component: {fileID: 8352882330272964474}
   - component: {fileID: 8352882330272964356}
+  - component: {fileID: 589456418}
   m_Layer: 0
   m_Name: IceElemental
   m_TagString: Untagged
@@ -20227,6 +20228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c99b723aa31c640b1bcf72aecd2fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillHndl: {fileID: 589456418}
   m_type: 0
   m_bossHand: {fileID: 2589137364601603258}
   m_throughObjectInHand: {fileID: 2428752570939889585}
@@ -20250,7 +20252,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 92
   m_CollisionDetection: 0
@@ -20268,6 +20270,19 @@ CapsuleCollider:
   m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &589456418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352882330272964475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db9ce8338352714e98c7ca2e63b0186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NormalSkills: []
 --- !u!1 &8352882330354023493
 GameObject:
   m_ObjectHideFlags: 0
