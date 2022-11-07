@@ -19,6 +19,6 @@ public class GotoMain : MonoBehaviour
 
     public void SceneChange()
     {
-        SceneManager.LoadScene("Main");  //메인씬 만들면 이름 Main으로 해야함.
+        SceneManager.LoadScene("Menu");  //메인씬 만들면 이름 Main으로 해야함.
     }
 }

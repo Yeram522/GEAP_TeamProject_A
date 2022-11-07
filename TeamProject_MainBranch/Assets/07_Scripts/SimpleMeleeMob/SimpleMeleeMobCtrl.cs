@@ -135,7 +135,6 @@ public class SimpleMeleeMobCtrl : MonoBehaviour
     {
 	    // 이동할 곳을 플레이어에 설정한다.
 	    SendMessage("SetDestination", attackTarget.position);
-	    Debug.Log(gameObject.name + " send Message : setDestination");
 	    // 2미터 이내로 접근하면 공격한다.
 	    if (Vector3.Distance( attackTarget.position, transform.position ) <= range)
 	    {
@@ -184,7 +183,6 @@ public class SimpleMeleeMobCtrl : MonoBehaviour
 	
 	void Damage(AttackInfo attackInfo)
 	{
-		Debug.Log("Damage");
 		status.damaged = true;
 		status.HP -= attackInfo.attackPower;
 		if (status.HP <= 0) {

@@ -86,8 +86,6 @@ public class Movement : MonoBehaviour
     {
         arrived = false;
         this.destination = destination;
-        
-        Debug.Log(gameObject.name + " receive Message : setDestination");
     }
 	
     // 지정한 방향으로 향한다.

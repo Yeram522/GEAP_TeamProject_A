@@ -46,9 +46,9 @@ public class AttackArea : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Player") return;
+        if (other.gameObject.tag != "Player") return;
         
-        // other.SendMessage("Damage",GetAttackInfo());
+        other.SendMessage("AttackPlayer",GetAttackInfo().attackPower);
         
         status.lastAttackTarget = other.transform.root.gameObject;
     }
