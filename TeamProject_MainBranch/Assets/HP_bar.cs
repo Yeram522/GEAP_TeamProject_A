@@ -17,7 +17,6 @@ public class HP_bar : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(hpBar.value);
         hpBar.value = player.HP/player.MaxHp;    
     }
 }
