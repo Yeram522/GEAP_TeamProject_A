@@ -24,6 +24,10 @@ public class SimpleMeleeMobCtrl : MonoBehaviour
 
     public GameObject[] dropItemPrefab;
 
+    public GameObject bullet;
+
+    public GameObject usingBullet;
+
     enum State
     {
         Walking,
@@ -184,7 +188,6 @@ public class SimpleMeleeMobCtrl : MonoBehaviour
 	
 	void Damage(AttackInfo attackInfo)
 	{
-		Debug.Log("Damage");
 		status.damaged = true;
 		status.HP -= attackInfo.attackPower;
 		if (status.HP <= 0) {
@@ -198,11 +201,22 @@ public class SimpleMeleeMobCtrl : MonoBehaviour
 	void StateStartCommon()
 	{
 		status.attacking = false;
-        status.died = false;
-    }
+		status.died = false;
+		status.damaged = false;
+	}
     // 공격 대상을 설정한다.
     public void SetAttackTarget(Transform target)
     {
-        attackTarget = target;
+	    attackTarget = target;
+    }
+
+    void ShootBullet()
+    {
+
+	    usingBullet.transform.position = transform.position + transform.forward;
+	    usingBullet.transform.rotation = Quaternion.Euler(transform.forward);
+	    usingBullet.SetActive(true);
+	    
+	    usingBullet.SendMessage("SetTarget", attackTarget);
     }
 }

@@ -69,6 +69,7 @@ public class SimpleMeleeMobAnimation : MonoBehaviour
         if (!isDamage && status.damaged)
         {
             isDamage = true;
+            status.damaged = false;
             animator.SetTrigger("Damage");
         }
         
@@ -93,5 +94,10 @@ public class SimpleMeleeMobAnimation : MonoBehaviour
     void EndAttack()
     {
         attacked = true;
+    }
+
+    void EndHit()
+    {
+        isDamage = false;
     }
 }
