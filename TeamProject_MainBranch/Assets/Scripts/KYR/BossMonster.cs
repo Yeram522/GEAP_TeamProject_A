@@ -40,6 +40,10 @@ public class BossMonster : MonoBehaviour
     //공기 팡 damageGuid
     public GameObject m_bombguidPrefab;
     public GameObject m_EffectBombParticle;
+    //Fire Pad
+    public GameObject m_FirePad;
+    //Rock Spawner
+    public GameObject m_RockSpawner;
 
     private Animator m_Animator;
     public delegate void m_defaultFeature(); //원소 특성에 따른 디폴트 특징. (변경될 수 있음)
@@ -88,12 +92,13 @@ public class BossMonster : MonoBehaviour
     private void initBossNormalSkills()
     {
         skillHndl.m_Skills = new List<BossSkill>();
-        skillHndl.m_Skills.Add(new BossSkill(10, 15, Special_02Bombing));
-        skillHndl.m_Skills.Add(new BossSkill(10, 10, Special_CreateTornado));
-        skillHndl.m_Skills.Add(new BossSkill(10, 5, Normal_Throwing));
-        skillHndl.m_Skills.Add(new BossSkill(10, 5, Normal_Rotating));
-        skillHndl.m_Skills.Add(new BossSkill(10, 30, Special_BossDefence));
-        skillHndl.m_Skills.Add(new BossSkill(10, 5, Normal_Chasing));
+        //skillHndl.m_Skills.Add(new BossSkill(10, 15, Special_02Bombing));
+        //skillHndl.m_Skills.Add(new BossSkill(10, 10, Special_CreateTornado));
+        //skillHndl.m_Skills.Add(new BossSkill(10, 5, Normal_Throwing));
+        //skillHndl.m_Skills.Add(new BossSkill(10, 5, Normal_Rotating));
+        //skillHndl.m_Skills.Add(new BossSkill(10, 30, Special_BossDefence));
+        //skillHndl.m_Skills.Add(new BossSkill(10, 5, Normal_Chasing));
+        skillHndl.m_Skills.Add(new BossSkill(10, 5, RockElem_RollingRock));
 
 
     }
@@ -106,8 +111,10 @@ public class BossMonster : MonoBehaviour
                 skillHndl.m_Skills.Add(new BossSkill(10, 5, IceElem_Freeze));
                 break;
             case Element.Rock:
+                skillHndl.m_Skills.Add(new BossSkill(10, 5, RockElem_RollingRock));
                 break;
             case Element.Lava:
+                skillHndl.m_Skills.Add(new BossSkill(10, 5, FireElem_CreateFirePad));
                 break;
             case Element.AllElem:
                 break;
@@ -398,10 +405,40 @@ public class BossMonster : MonoBehaviour
         yield return null;
     }
 
-
-    //Lava Elemental Special Skill: Fire Rain
-    private void FireElem_FireRain() 
+    //Rock Elemental Special Skill: 
+    private void RockElem_RollingRock()
     {
+        m_RockSpawner = GameObject.Find("RollingRockManager");
+        m_RockSpawner.GetComponent<ElemRockRolling>().Initialzie();
+    }
 
+    //Lava Elemental Special Skill: Fire Pad / player 밑에 장판이 따라다니다가 일정 초 뒤에 고정되고 타오른다. 순간이동을 통해 피해야함.
+    private void FireElem_CreateFirePad() 
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        Vector3 pos = new Vector3(player.transform.position.x, player.transform.position.y + 3.0f, player.transform.position.z);
+        GameObject fpad = Instantiate(m_FirePad, pos, player.transform.rotation);
+
+        fpad.transform.SetParent(player.transform);
+
+        
+
+        StartCoroutine(FirePadExplosion(fpad));
+    }
+
+    IEnumerator FirePadExplosion(GameObject _fpad)
+    {
+        GameObject fires = _fpad.transform.GetChild(0).gameObject;
+        GameObject projection = _fpad.transform.GetChild(1).gameObject;
+        yield return new WaitForSeconds(3.0f);
+        _fpad.transform.parent = null;
+
+        yield return new WaitForSeconds(0.5f);
+
+        projection.SetActive(false);
+        fires.SetActive(true);
+
+        Destroy(_fpad, 2.0f);
+        yield return null;
     }
 }

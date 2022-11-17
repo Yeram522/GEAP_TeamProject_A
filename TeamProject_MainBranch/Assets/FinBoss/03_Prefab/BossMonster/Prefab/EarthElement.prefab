@@ -10947,6 +10947,7 @@ MonoBehaviour:
   m_shieldObject: {fileID: 6310974480031226193, guid: 33f8be155d61ab048b52763dfe186458, type: 3}
   m_bombguidPrefab: {fileID: 8343512302550149420, guid: 4f1eb6afc7854dd42a5d8dc03af1b116, type: 3}
   m_EffectBombParticle: {fileID: 8450109398865278895, guid: bded4b7df7bd98a4dba10495532b92f9, type: 3}
+  m_FirePad: {fileID: 934081849222050753, guid: 3b6c40de3c268b64f869ca2581eced37, type: 3}
   m_damageGuidGraphic:
   - {fileID: 0}
   - {fileID: 0}
