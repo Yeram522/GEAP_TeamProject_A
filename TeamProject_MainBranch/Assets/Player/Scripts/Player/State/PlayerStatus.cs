@@ -7,6 +7,8 @@ public class PlayerStatus : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     int hp = 100;
+
+    public int hp_max = 100;
     [SerializeField]
     int damage = 5;
 
@@ -21,11 +23,16 @@ public class PlayerStatus : MonoBehaviour
         
     }
 
+    public int getPlayerHP() 
+    {
+        return hp;
+    }
+
     public void HealPlayer(int value)
     {
         hp += value;
-        if (hp > 100)
-            hp = 100;
+        if (hp > hp_max)
+            hp = hp_max;
     }
 
     // 데미지를 입을 함수 설정
