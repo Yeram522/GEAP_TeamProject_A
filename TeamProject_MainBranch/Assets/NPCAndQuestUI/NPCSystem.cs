@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class QuestInfo //외부에서 입력 가능
+{
+    public GameObject gameObject = null;
+    //Quest Progress text
+    public string contents;
+    public string questDialog;//퀘스트 주고 나서의 대사
+    public string defaultDialog;//퀘스트 주고 나서의 대사
+    public string ClearDialog;//퀘스트 주고 나서의 대사
+    public int totalCnt;
+    public int completeCnt;
+}
 public class NPCSystem : MonoBehaviour
 {
     //For UI Visualizing
@@ -10,18 +22,7 @@ public class NPCSystem : MonoBehaviour
     public GameObject MainCam;
     public GameObject NPC_Cam;
 
-    [System.Serializable]
-    public class QuestInfo //외부에서 입력 가능
-    {
-        //Quest Progress text
-        public string contents;
-        public string questDialog;//퀘스트 주고 나서의 대사
-        public string defaultDialog;//퀘스트 주고 나서의 대사
-        public string ClearDialog;//퀘스트 주고 나서의 대사
-        public int totalCnt;
-        public int completeCnt;
-    }
-
+    
     public string name;
     public List<QuestInfo> m_QuestInfos;//퀘스트 정보.
 
@@ -30,6 +31,7 @@ public class NPCSystem : MonoBehaviour
     private int m_DoneQuestCount;//완료한 퀘스트 숫자
 
     private GameObject UI_MANAGER;
+    private QuestManagerSystem Quest_MANAGER;
 
     private bool isProgressingQuest;
     private bool PlayerLock;
@@ -47,6 +49,7 @@ public class NPCSystem : MonoBehaviour
         PlayerLock = false;
         m_QuestCount = m_QuestInfos.Count;
         UI_MANAGER = GameObject.FindGameObjectWithTag("UIManager");
+        Quest_MANAGER = UI_MANAGER.GetComponent<QuestManagerSystem>();
         MainCam = GameObject.FindGameObjectWithTag("MainCamera");
 
     }
@@ -113,7 +116,9 @@ public class NPCSystem : MonoBehaviour
             {
                 UI_Dialog.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = m_QuestInfos[m_DoneQuestCount].ClearDialog;
                 isProgressingQuest = false;
-                QuestUIUpdate(false);
+
+                Quest_MANAGER.RemoveQuest(m_QuestInfos[m_DoneQuestCount]);
+
                 m_DoneQuestCount++;
             }
 
@@ -125,17 +130,13 @@ public class NPCSystem : MonoBehaviour
 
         QuestInfo currentQuest = m_QuestInfos[m_DoneQuestCount];
 
+        Quest_MANAGER.AddQuest(currentQuest);
+
         Text T_Name = UI_Dialog.transform.GetChild(0).GetChild(0).GetComponent<Text>();
         Text T_Dialog = UI_Dialog.transform.GetChild(1).GetChild(0).GetComponent<Text>();
 
         T_Name.text = name;
         T_Dialog.text = currentQuest.questDialog;
-
-        Text T_Destin = UI_MANAGER.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>();
-        Text T_PrgressCnt = UI_MANAGER.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>();
-
-        T_Destin.text = currentQuest.contents;
-        T_PrgressCnt.text = "(" + currentQuest.completeCnt + "/" + currentQuest.totalCnt + ")";
 
     }
 
@@ -144,29 +145,7 @@ public class NPCSystem : MonoBehaviour
     {
         if (m_DoneQuestCount != 0) return;
 
-
-        //UI Update
-        QuestUIUpdate(true);
-
+        m_QuestInfos[m_DoneQuestCount].completeCnt++;
     }
 
-
-    private void QuestUIUpdate(bool _trigger)
-    {
-        Text T_Destin = UI_MANAGER.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>();
-        Text T_PrgressCnt = UI_MANAGER.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>();
-
-
-        if (!_trigger)
-        {
-            //UI Update
-            T_Destin.text = " ";
-            T_PrgressCnt.text = " ";
-            return;
-        }
-        QuestInfo currentQuest = m_QuestInfos[m_DoneQuestCount];
-
-        //UI Update
-        T_PrgressCnt.text = "(" + currentQuest.completeCnt + "/" + currentQuest.totalCnt + ")";
-    }
 }
