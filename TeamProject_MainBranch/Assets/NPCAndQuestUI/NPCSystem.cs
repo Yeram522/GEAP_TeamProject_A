@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class QuestInfo //외부에서 입력 가능
 {
     public GameObject gameObject = null;
+
     //Quest Progress text
     public string contents;
-    public string questDialog;//퀘스트 주고 나서의 대사
+    [System.NonSerialized]
+    public int queststringProgress=0;
+    public List<string> questDialog;//퀘스트 주고 나서의 대사
     public string defaultDialog;//퀘스트 주고 나서의 대사
     public string ClearDialog;//퀘스트 주고 나서의 대사
     public int totalCnt;
@@ -22,7 +25,7 @@ public class NPCSystem : MonoBehaviour
     public GameObject MainCam;
     public GameObject NPC_Cam;
 
-    
+    public bool NPCActive = false;
     public string name;
     public List<QuestInfo> m_QuestInfos;//퀘스트 정보.
 
@@ -35,6 +38,8 @@ public class NPCSystem : MonoBehaviour
 
     private bool isProgressingQuest;
     private bool PlayerLock;
+
+    [SerializeField]
     private Vector3 lastPlayerPos;
     //FirstQusetParam
 
@@ -57,12 +62,7 @@ public class NPCSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerLock)
-        {
-            //Player Lock
-            GameObject.FindGameObjectWithTag("Player").transform.position
-                = this.transform.position + Vector3.forward * 5.0f;
-        }
+        if (!NPCActive) return;
         if (DialogActive && Input.GetKeyDown(KeyCode.E))
         {
             //SetActive Dialog Window
@@ -71,19 +71,34 @@ public class NPCSystem : MonoBehaviour
             NPC_Cam.SetActive(true);
             SetDialog();
             DialogActive = false;
-
-            PlayerLock = true;
+            GameObject.FindGameObjectWithTag("Player").transform.position
+                = this.transform.position + Vector3.forward * 5.0f;
+            //PlayerLock
+            //GameObject.FindGameObjectWithTag("Player").SendMessage("PlayerMovementFix", false);
             lastPlayerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
 
         }
         else if (UI_Dialog.activeSelf && Input.GetKeyDown(KeyCode.E))
         {
+            if (m_QuestInfos[m_DoneQuestCount].questDialog.Count > m_QuestInfos[m_DoneQuestCount].queststringProgress)
+            {
+                UpadateQuestDialog();
+
+                return;
+            }
+
             UI_Dialog.SetActive(false);
+            GameObject.FindGameObjectWithTag("Player").transform.position = lastPlayerPos;
             NPC_Cam.SetActive(false);
             MainCam.SetActive(true);
-            PlayerLock = false;
-            GameObject.FindGameObjectWithTag("Player").transform.position = lastPlayerPos;
+
+
+            //PlayerLock
+            //GameObject.FindGameObjectWithTag("Player").SendMessage("PlayerMovementFix", false);
+
+            NPCActive = false;
+
             if (!isProgressingQuest) return;
 
             //퀘스트 완료시
@@ -98,6 +113,7 @@ public class NPCSystem : MonoBehaviour
         if (other.tag == "Player")
         {
             DialogActive = true;
+            NPCActive = true;
         }
 
     }
@@ -132,14 +148,23 @@ public class NPCSystem : MonoBehaviour
 
         Quest_MANAGER.AddQuest(currentQuest);
 
+        UpadateQuestDialog();
+
+    }
+
+    private void UpadateQuestDialog()
+    {
+        QuestInfo currentQuest = m_QuestInfos[m_DoneQuestCount];
+
         Text T_Name = UI_Dialog.transform.GetChild(0).GetChild(0).GetComponent<Text>();
         Text T_Dialog = UI_Dialog.transform.GetChild(1).GetChild(0).GetComponent<Text>();
 
         T_Name.text = name;
-        T_Dialog.text = currentQuest.questDialog;
+        T_Dialog.text = currentQuest.questDialog[currentQuest.queststringProgress];
 
+        if (m_QuestInfos[m_DoneQuestCount].questDialog.Count <= m_QuestInfos[m_DoneQuestCount].queststringProgress) return;
+        m_QuestInfos[m_DoneQuestCount].queststringProgress++;
     }
-
     //몬스터 처치시 불러와진다.
     public void NPCFirstQuestMessage()
     {
