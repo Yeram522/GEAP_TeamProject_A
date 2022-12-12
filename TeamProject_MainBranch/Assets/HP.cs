@@ -16,6 +16,6 @@ public class HP : MonoBehaviour
 
     void Update()
     {
-        //hpBar.value = status.getPlayerHP() / 100;
+        hpBar.value = status.getPlayerHP() / 100;
     }
 }
