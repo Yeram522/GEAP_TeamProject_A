@@ -29,7 +29,7 @@ public class GameSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)) clearBossStage("Stage1Boss");
+        if(Input.GetKeyDown(KeyCode.P)) clearBossStage();
         
     }
 
@@ -52,7 +52,7 @@ public class GameSceneManager : MonoBehaviour
         SceneManager.LoadScene(nextSceneName);
     }
 
-    void clearBossStage(string currentSceneName)
+    void clearBossStage()
     {
         SceneManager.LoadScene("SecondMap");
     }

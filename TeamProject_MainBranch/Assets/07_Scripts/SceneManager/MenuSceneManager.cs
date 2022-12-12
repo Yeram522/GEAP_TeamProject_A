@@ -30,4 +30,19 @@ public class MenuSceneManager : MonoBehaviour
             Application.Quit();
         #endif  
     }
+
+    public void MoveToMainMenu()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void subMenu(GameObject go)
+    {
+        go.SetActive(true);
+    }
+    
+    public void BackButton(GameObject go)
+    {
+        go.SetActive(false);
+    }
 }
