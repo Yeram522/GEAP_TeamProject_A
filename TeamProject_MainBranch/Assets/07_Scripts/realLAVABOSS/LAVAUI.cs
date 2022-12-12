@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class UIpumpkin : MonoBehaviour
+
+public class LAVAUI : MonoBehaviour
 {
     Slider slHP;
     float fSliderBarTime;
@@ -21,15 +22,14 @@ public class UIpumpkin : MonoBehaviour
         else
             transform.Find("Fill Area").gameObject.SetActive(true);
 
-        if(Input.GetMouseButtonDown(2)) // 마우스 휠 버튼 누를 때
+        if (Input.GetKeyDown(KeyCode.Space))// 스페이스바 누를 때
         {
             slHP.value -= hpLAVA;
         }
 
-        if(slHP.value <=0.001)
+        if (slHP.value <= 0.001)
         {
             Destroy(gameObject);
         }
     }
-
-  }
+}
