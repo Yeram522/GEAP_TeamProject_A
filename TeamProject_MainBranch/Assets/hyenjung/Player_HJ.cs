@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player_HJ : MonoBehaviour
 {
     NpcSentence npc_sentence;
 
-    public float speed = 5f;
+    //public float speed = 5f;
     public float MaxHp = 100f;
 
     public float HP = 100f;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public bool S_;
     public bool D_;
     public bool E_;
-    public bool Space_;
+    //public bool Space_;
 
     public bool firstQ;
     public bool senendQ;
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         A_ = false;
         S_ = false;
         D_ = false;
-        Space_ = false;
+        //Space_ = false;
         Shift_3f_ = false;
         senendQ= false;
         isClicked_R_ = false;
@@ -92,10 +92,10 @@ public class Player : MonoBehaviour
             //transform.Translate(0, 0, -speed * Time.deltaTime);
            S_ = true;
         }
-        else if (Input.GetKey(KeyCode.Space))
-        {
-            Space_ = true;
-        }
+        //else if (Input.GetKey(KeyCode.Space))
+        //{
+        //    Space_ = true;
+        //}
         else if (Input.GetKey(KeyCode.LeftShift))
         {
             Shift_3f_ = true;
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
 
     public bool firstQ_check()
     {
-        if (W_ && A_ && S_ && D_ && Space_ && Shift_3f_)
+        if (W_ && A_ && S_ && D_ /*&& Space_*/ && Shift_3f_)
         {
             firstQ = true;
             Debug.Log("첫퀘스트완료");
