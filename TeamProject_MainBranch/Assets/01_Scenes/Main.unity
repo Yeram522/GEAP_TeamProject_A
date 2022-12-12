@@ -40361,65 +40361,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 372415923836410673, guid: 0a5e94e6e88a20247b26bc1cb571b755, type: 3}
   m_PrefabInstance: {fileID: 1107054561}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1038268728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1038268732}
-  - component: {fileID: 1038268729}
-  - component: {fileID: 1038268733}
-  m_Layer: 0
-  m_Name: BABY LAVA RESPONE
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &1038268729
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038268728}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1038268732
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038268728}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.28, y: 0, z: -0.74}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 708545844}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1038268733
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038268728}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 30, y: 0.3, z: 30}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1038538399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75488,11 +75429,11 @@ PrefabInstance:
     - target: {fileID: 6067716679614099911, guid: 48b5e57a054881c40b59cd392b5b329d, type: 3}
       propertyPath: rangeObject
       value: 
-      objectReference: {fileID: 1038268728}
+      objectReference: {fileID: 0}
     - target: {fileID: 6067716679614099911, guid: 48b5e57a054881c40b59cd392b5b329d, type: 3}
       propertyPath: rangeCollider
       value: 
-      objectReference: {fileID: 1038268733}
+      objectReference: {fileID: 0}
     - target: {fileID: 6067716679614099915, guid: 48b5e57a054881c40b59cd392b5b329d, type: 3}
       propertyPath: gameObject
       value: 
