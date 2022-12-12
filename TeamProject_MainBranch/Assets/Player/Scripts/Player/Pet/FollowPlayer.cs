@@ -31,7 +31,7 @@ public class FollowPlayer : MonoBehaviour
         }
         else
         {
-            nav.speed = 5.0f;
+            nav.speed = 10.0f;
         }
     }
 

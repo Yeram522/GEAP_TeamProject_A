@@ -59,7 +59,13 @@ public class PetAI : MonoBehaviour
 
         if (skillCoolTime) Skill();
 
-
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            if (petClass == PET_CLASS.HEAL)
+                petClass = PET_CLASS.DEFENCE;
+            else if (petClass == PET_CLASS.DEFENCE)
+                petClass = PET_CLASS.HEAL;    
+        }
 
     }
 
