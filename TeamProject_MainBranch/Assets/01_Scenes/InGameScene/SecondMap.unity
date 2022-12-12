@@ -8128,6 +8128,10 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
+    - target: {fileID: 6230682841488591884, guid: 56eb8123dfa43e540836fc6d6004ff03, type: 3}
+      propertyPath: m_QuestInfos.Array.data[0].totalCnt
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6230682841488591887, guid: 56eb8123dfa43e540836fc6d6004ff03, type: 3}
       propertyPath: m_Name
       value: NPC2
@@ -44047,6 +44051,17 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
+    - target: {fileID: 5955689376557550296, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
+      propertyPath: m_QuestInfos.Array.data[1].defaultDialog
+      value: "\uD638\uBC15\uD574\uACE8\uC778\uC9C0 \uBB54\uC9C0..\uC0C1\uC0C1\uB9CC\uD574\uB3C4
+        \uC18C\uB984\uB3CB\uC544\uC694!!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955689376557550296, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
+      propertyPath: m_QuestInfos.Array.data[1].questDialog.Array.data[0]
+      value: "\uBD84\uBA85\uD574\uC694!! \uD638\uBC15\uAC19\uC774\uC0DD\uAE34..\uC544\uB2C8!
+        \uD638\uBC15\uBCF4\uB2E4 \uB354 \uC12C\uB729\uD558\uAC8C \uC0DD\uAE34 \uB140\uC11D\uC774
+        \uAC00\uC838\uAC04\uAC8C \uD2C0\uB9BC\uC5C6\uC5B4\uC694.."
+      objectReference: {fileID: 0}
     - target: {fileID: 5955689376557550311, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
       propertyPath: m_Name
       value: NPC3
@@ -54156,6 +54171,20 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
+    - target: {fileID: 2459824156724899579, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
+      propertyPath: m_QuestInfos.Array.data[0].totalCnt
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459824156724899579, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
+      propertyPath: m_QuestInfos.Array.data[0].ClearDialog
+      value: "\uD760..\uADF8\uB7FC \uBCF4\uB77C \uBC8C\uB808 \uAC19\uC740 \uB140\uC11D\uC774
+        \uAC00\uC838\uAC14\uB098\uBCF4\uAD70.."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2459824156724899579, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
+      propertyPath: m_QuestInfos.Array.data[1].questDialog.Array.data[0]
+      value: "\uADF8 \uBC8C\uB808 \uB140\uC11D\uC73C\uB85C\uBD80\uD130 \uB9DD\uCE58\uB97C
+        \uCC3E\uC544\uC640 \uC904 \uC218 \uC788\uACA0\uB098?"
+      objectReference: {fileID: 0}
     - target: {fileID: 2459824156724899581, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
       propertyPath: m_Name
       value: NPC1

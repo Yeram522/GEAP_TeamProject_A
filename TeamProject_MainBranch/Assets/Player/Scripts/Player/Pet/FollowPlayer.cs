@@ -35,7 +35,7 @@ public class FollowPlayer : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+  private void OnTriggerStay(Collider other)
     {
         if(isOutofrange)
         {
@@ -44,7 +44,11 @@ public class FollowPlayer : MonoBehaviour
         }
         else
         {
-            nav.SetDestination(transform.position);
+            try
+            {
+                nav.SetDestination(transform.position);
+            } catch {}
+
             anim.SetBool("isMove", false);
         }
 
