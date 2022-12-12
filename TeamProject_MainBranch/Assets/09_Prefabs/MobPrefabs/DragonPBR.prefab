@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2fde96ce5dfae4da1ba8b3eeeb8d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTrigger: 0
 --- !u!1 &1520932498399910169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32d9083d95d253418710fc6cb15c079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 8
 --- !u!114 &1520932499741299341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,7 +1291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTarget: {fileID: 0}
-  range: 5
+  range: 3
   waitBaseTime: 2
   walkRange: 15
   basePosition: {x: 0, y: 0, z: 0}

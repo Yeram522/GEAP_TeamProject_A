@@ -48,7 +48,7 @@ public class AttackArea : MonoBehaviour
     {
         if (other.tag != "Player") return;
         
-        //other.SendMessage("Damage",GetAttackInfo());
+        other.SendMessage("AttackPlayer",GetAttackInfo().attackPower);
 
         status.lastAttackTarget = other.transform.root.gameObject;
     }
