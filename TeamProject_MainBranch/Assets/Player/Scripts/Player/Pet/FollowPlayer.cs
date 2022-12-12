@@ -35,21 +35,27 @@ public class FollowPlayer : MonoBehaviour
         }
     }
 
-  private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(isOutofrange)
+        if (isOutofrange)
         {
-            nav.SetDestination(target.transform.position);
-            anim.SetBool("isMove", true);
+            try
+            {
+                nav.SetDestination(target.transform.position);
+                anim.SetBool("isMove", true);
+            }
+            catch { }
         }
         else
         {
             try
             {
                 nav.SetDestination(transform.position);
-            } catch {}
+                anim.SetBool("isMove", false);
+            }
+            catch { }
 
-            anim.SetBool("isMove", false);
+
         }
 
     }

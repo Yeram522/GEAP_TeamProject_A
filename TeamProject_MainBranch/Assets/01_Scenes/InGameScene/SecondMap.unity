@@ -8128,10 +8128,6 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
-    - target: {fileID: 6230682841488591884, guid: 56eb8123dfa43e540836fc6d6004ff03, type: 3}
-      propertyPath: m_QuestInfos.Array.data[0].totalCnt
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6230682841488591887, guid: 56eb8123dfa43e540836fc6d6004ff03, type: 3}
       propertyPath: m_Name
       value: NPC2
@@ -13202,6 +13198,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448508212}
   m_CullTransparentMesh: 1
+--- !u!1 &452830384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2459824156724899581, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
+  m_PrefabInstance: {fileID: 1673968340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &455480366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31128,7 +31129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984143692}
   - component: {fileID: 984143691}
-  - component: {fileID: 984143690}
+  - component: {fileID: 984143689}
   m_Layer: 0
   m_Name: CM_NPC1
   m_TagString: Camera
@@ -31136,14 +31137,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &984143690
-AudioListener:
+--- !u!114 &984143689
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984143688}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5be46dc07de56940b3112a13094c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &984143691
 Camera:
   m_ObjectHideFlags: 0
@@ -39313,6 +39318,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2791540570912542096, guid: aa7995a7ac2d5c147a735a0b0a851a8a, type: 3}
   m_PrefabInstance: {fileID: 1212432970}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1221512433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5955689376557550311, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
+  m_PrefabInstance: {fileID: 1367561446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1221997631
 GameObject:
   m_ObjectHideFlags: 0
@@ -43214,7 +43224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345027646}
   - component: {fileID: 1345027645}
-  - component: {fileID: 1345027644}
+  - component: {fileID: 1345027643}
   m_Layer: 0
   m_Name: CM_NPC3
   m_TagString: Camera
@@ -43222,14 +43232,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &1345027644
-AudioListener:
+--- !u!114 &1345027643
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345027642}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5be46dc07de56940b3112a13094c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1345027645
 Camera:
   m_ObjectHideFlags: 0
@@ -44051,17 +44065,6 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
-    - target: {fileID: 5955689376557550296, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
-      propertyPath: m_QuestInfos.Array.data[1].defaultDialog
-      value: "\uD638\uBC15\uD574\uACE8\uC778\uC9C0 \uBB54\uC9C0..\uC0C1\uC0C1\uB9CC\uD574\uB3C4
-        \uC18C\uB984\uB3CB\uC544\uC694!!!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 5955689376557550296, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
-      propertyPath: m_QuestInfos.Array.data[1].questDialog.Array.data[0]
-      value: "\uBD84\uBA85\uD574\uC694!! \uD638\uBC15\uAC19\uC774\uC0DD\uAE34..\uC544\uB2C8!
-        \uD638\uBC15\uBCF4\uB2E4 \uB354 \uC12C\uB729\uD558\uAC8C \uC0DD\uAE34 \uB140\uC11D\uC774
-        \uAC00\uC838\uAC04\uAC8C \uD2C0\uB9BC\uC5C6\uC5B4\uC694.."
-      objectReference: {fileID: 0}
     - target: {fileID: 5955689376557550311, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
       propertyPath: m_Name
       value: NPC3
@@ -54171,20 +54174,6 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
-    - target: {fileID: 2459824156724899579, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
-      propertyPath: m_QuestInfos.Array.data[0].totalCnt
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2459824156724899579, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
-      propertyPath: m_QuestInfos.Array.data[0].ClearDialog
-      value: "\uD760..\uADF8\uB7FC \uBCF4\uB77C \uBC8C\uB808 \uAC19\uC740 \uB140\uC11D\uC774
-        \uAC00\uC838\uAC14\uB098\uBCF4\uAD70.."
-      objectReference: {fileID: 0}
-    - target: {fileID: 2459824156724899579, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
-      propertyPath: m_QuestInfos.Array.data[1].questDialog.Array.data[0]
-      value: "\uADF8 \uBC8C\uB808 \uB140\uC11D\uC73C\uB85C\uBD80\uD130 \uB9DD\uCE58\uB97C
-        \uCC3E\uC544\uC640 \uC904 \uC218 \uC788\uACA0\uB098?"
-      objectReference: {fileID: 0}
     - target: {fileID: 2459824156724899581, guid: 80e7cce40149cb8429990e0c44c62ebe, type: 3}
       propertyPath: m_Name
       value: NPC1
@@ -55835,7 +55824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1728206605}
   - component: {fileID: 1728206604}
-  - component: {fileID: 1728206603}
+  - component: {fileID: 1728206602}
   m_Layer: 0
   m_Name: CM_NPC2
   m_TagString: Camera
@@ -55843,14 +55832,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!81 &1728206603
-AudioListener:
+--- !u!114 &1728206602
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728206601}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5be46dc07de56940b3112a13094c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1728206604
 Camera:
   m_ObjectHideFlags: 0
@@ -65811,6 +65804,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4641518397717404, guid: f2b055ed15f48bd4793c0d0ef6185ee5, type: 3}
   m_PrefabInstance: {fileID: 2067682169}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2068754401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6230682841488591887, guid: 56eb8123dfa43e540836fc6d6004ff03, type: 3}
+  m_PrefabInstance: {fileID: 267940526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2069334879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68220,7 +68218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
       propertyPath: gameObjectsForMovingToScene.Array.size
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
       propertyPath: gameObjectsForMovingToScene.Array.data[1]
@@ -68238,6 +68236,30 @@ PrefabInstance:
       propertyPath: gameObjectsForMovingToScene.Array.data[4]
       value: 
       objectReference: {fileID: 28011607}
+    - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
+      propertyPath: gameObjectsForMovingToScene.Array.data[5]
+      value: 
+      objectReference: {fileID: 452830384}
+    - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
+      propertyPath: gameObjectsForMovingToScene.Array.data[6]
+      value: 
+      objectReference: {fileID: 2068754401}
+    - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
+      propertyPath: gameObjectsForMovingToScene.Array.data[7]
+      value: 
+      objectReference: {fileID: 1221512433}
+    - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
+      propertyPath: gameObjectsForMovingToScene.Array.data[8]
+      value: 
+      objectReference: {fileID: 984143688}
+    - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
+      propertyPath: gameObjectsForMovingToScene.Array.data[9]
+      value: 
+      objectReference: {fileID: 1728206601}
+    - target: {fileID: 537670033275618444, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
+      propertyPath: gameObjectsForMovingToScene.Array.data[10]
+      value: 
+      objectReference: {fileID: 1345027642}
     - target: {fileID: 537670033275618445, guid: a9fd425be7c674246acc7bc9d05f5c63, type: 3}
       propertyPath: m_RootOrder
       value: 13

@@ -1160,6 +1160,7 @@ GameObject:
   - component: {fileID: 754214363480823182}
   - component: {fileID: 5955689376557550297}
   - component: {fileID: 5955689376557550296}
+  - component: {fileID: 6210668893086255227}
   m_Layer: 0
   m_Name: NPC3
   m_TagString: Untagged
@@ -1287,6 +1288,18 @@ MonoBehaviour:
     totalCnt: 1
     completeCnt: 0
   lastPlayerPos: {x: 0, y: 0, z: 0}
+--- !u!114 &6210668893086255227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955689376557550311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5be46dc07de56940b3112a13094c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6005689111386994039
 GameObject:
   m_ObjectHideFlags: 0
