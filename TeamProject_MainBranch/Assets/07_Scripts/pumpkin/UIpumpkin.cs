@@ -4,14 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIpumpkin : MonoBehaviour
 {
-    public Transform player;
-    public Slider hpbar;
-    public float maxHp;
-    public float currenthp;
+    Slider slHP;
+    float fSliderBarTime;
+    public float hpLAVA;
+    public GameObject gameObject;
+    void Start()
+    {
+        slHP = GetComponent<Slider>();
+    }
+
 
     void Update()
     {
-        transform.position = player.position + new Vector3(0, 0, 0);
-        hpbar.value = currenthp / maxHp;
+        if (slHP.value <= 0)
+            transform.Find("Fill Area").gameObject.SetActive(false);
+        else
+            transform.Find("Fill Area").gameObject.SetActive(true);
+
+        if(Input.GetMouseButtonDown(2)) // 마우스 휠 버튼 누를 때
+        {
+            slHP.value -= hpLAVA;
+        }
+
+        if(slHP.value <=0.001)
+        {
+            Destroy(gameObject);
+        }
     }
-}
+
+  }
