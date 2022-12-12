@@ -8128,6 +8128,10 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
+    - target: {fileID: 6230682841488591884, guid: 56eb8123dfa43e540836fc6d6004ff03, type: 3}
+      propertyPath: m_QuestInfos.Array.data[0].totalCnt
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6230682841488591887, guid: 56eb8123dfa43e540836fc6d6004ff03, type: 3}
       propertyPath: m_Name
       value: NPC2
@@ -44162,6 +44166,10 @@ PrefabInstance:
       propertyPath: UI_Dialog
       value: 
       objectReference: {fileID: 146461599}
+    - target: {fileID: 5955689376557550296, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
+      propertyPath: m_QuestInfos.Array.data[0].totalCnt
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5955689376557550311, guid: a1a82ee6c4d979d46959d8cb99c217d2, type: 3}
       propertyPath: m_Name
       value: NPC3
