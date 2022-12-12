@@ -29,6 +29,7 @@ public class LAVAUI : MonoBehaviour
 
         if (slHP.value <= 0.001)
         {
+            GameObject.FindWithTag("UIManager").GetComponent<QuestManagerSystem>().SendMessage("NPCSecondtQuestMessage");
             Destroy(gameObject);
         }
     }
