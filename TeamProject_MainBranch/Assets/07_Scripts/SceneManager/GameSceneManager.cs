@@ -59,9 +59,6 @@ public class GameSceneManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        GameObject loadingPanel = GameObject.Find("LoadingPanel");
-        if(loadingPanel != null) loadingPanel.SetActive(false);
-        
         if (scene.name != "SecondMap") return;
 
         foreach (var script in changeSceneColliders.Values)
