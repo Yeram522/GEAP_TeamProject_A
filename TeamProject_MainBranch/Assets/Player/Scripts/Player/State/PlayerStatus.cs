@@ -6,7 +6,7 @@ public class PlayerStatus : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    int hp = 100;
+    float hp = 100.0f;
 
     public int hp_max = 100;
     [SerializeField]
@@ -26,7 +26,7 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
-    public int getPlayerHP()
+    public float getPlayerHP()
     {
         return hp;
     }
@@ -52,7 +52,7 @@ public class PlayerStatus : MonoBehaviour
     }
 
     // 데미지를 입을 함수 설정
-    void AttackPlayer(int damage)
+    void AttackPlayer(float damage)
     {
 
         hp -= damage;

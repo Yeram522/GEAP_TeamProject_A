@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class AntientMonster : MonoBehaviour
 {
@@ -22,6 +24,10 @@ public class AntientMonster : MonoBehaviour
             Normal_Chasing();
         else
             m_Animator.SetBool("Walk Forward", false);
+
+
+        if (GameObject.Find("UI").transform.GetChild(0).GetComponent<Slider>().value == 0.0f)
+            Destroy(this.gameObject);
     }
 
     private void setBossSkillSets()
@@ -34,7 +40,7 @@ public class AntientMonster : MonoBehaviour
     private void Normal_Chasing()
     {
         int MoveSpeed = 5;
-        int MinDist = 3;
+        int MinDist = 10;
 
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
         transform.LookAt(player);
@@ -77,26 +83,38 @@ public class AntientMonster : MonoBehaviour
         StartCoroutine(deleyTime());
     }
 
+    IEnumerator runToPlayer()
+    {
+        int MinDist = 3;
+        int MoveSpeed = 10;
+
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        while (Vector3.Distance(transform.position, player.position) >= MinDist)
+        {
+            transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        }
+
+
+        transform.LookAt(player);
+        m_Animator.SetBool("Walk Forward", true);
+        m_Animator.SetTrigger("Stab Attack");
+
+        yield return new WaitForSeconds(1.0f);
+        m_isChasing = true;
+        m_Animator.SetBool("Walk Forward", true);
+
+        yield return null;
+    }
     private void stabAttack()
     {
 
         m_isChasing = false;
 
-        int MinDist = 3;
+       
 
-        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-        transform.LookAt(player);
-        m_Animator.SetBool("Walk Forward", true);
+        StartCoroutine(runToPlayer());
 
-        if (Vector3.Distance(transform.position, player.position) >= MinDist)
-        {
-            castSpell();
-        }
-        else
-            m_Animator.SetTrigger("Stab Attack");
-
-
-        StartCoroutine(deleyTime());
+      //  StartCoroutine(deleyTime());
     }
 
     IEnumerator deleyTime()
@@ -106,5 +124,40 @@ public class AntientMonster : MonoBehaviour
         m_isChasing = true;
         m_Animator.SetBool("Walk Forward", true);
         yield return null;
+    }
+
+    public void Damage(AttackInfo damage)
+    {
+        GameObject ui = GameObject.Find("UI");
+
+        ui.transform.GetChild(0).GetComponent<Slider>().value -= (damage.attackPower * 0.05f);
+        ui.transform.GetChild(1).GetComponent<Text>().text = (ui.transform.GetChild(0).GetComponent<Slider>().value * 100).ToString();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name != "Player") return;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>().SendMessage("AttackPlayer", 10.0f);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
+
+    public void StartAttackHit()
+    {
+        this.gameObject.GetComponent<SphereCollider>().enabled = true;
+    }
+
+    public void EndAttackHit()
+    {
+        this.gameObject.GetComponent<SphereCollider>().enabled = false;
+    }
+
+    public void EndAttack()
+    {
+        this.gameObject.GetComponent<SphereCollider>().enabled = false;
     }
 }
