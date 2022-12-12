@@ -88,6 +88,9 @@ public class SimpleRangeMobCtrl : MonoBehaviour
 		        case State.Attacking:
 			        AttackStart();
 			        break;
+		        case State.Escaping:
+			        EscapeStart();
+			        break;
 		        case State.Died:
 			        Died();
 			        break;

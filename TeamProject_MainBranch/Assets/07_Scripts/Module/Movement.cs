@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rigidbodyInfo = GetComponent<Rigidbody>();
         destination = transform.position;
     }
@@ -37,6 +38,14 @@ public class Movement : MonoBehaviour
         destinationXZ.y = transform.position.y;
 
         Vector3 direction = (destinationXZ - transform.position).normalized;
+        if (Terrain.activeTerrain.SampleHeight(direction) < 40)
+        {
+            Vector3 reverseDirection = direction * 6;
+            reverseDirection.x = -reverseDirection.x;
+            reverseDirection.z = -reverseDirection.z;
+            direction = reverseDirection;
+        }
+        
         float distance = Vector3.Distance(transform.position,destinationXZ);
 
         Vector3 currentVelocity = velocity;
