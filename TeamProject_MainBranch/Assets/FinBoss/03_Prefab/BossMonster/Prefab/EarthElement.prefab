@@ -10883,9 +10883,10 @@ GameObject:
   - component: {fileID: 8844935055122862649}
   - component: {fileID: 8844935055122862650}
   - component: {fileID: 8844935055122862651}
+  - component: {fileID: 5543937066535310278}
   m_Layer: 0
   m_Name: EarthElement
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10947,7 +10948,6 @@ MonoBehaviour:
   m_shieldObject: {fileID: 6310974480031226193, guid: 33f8be155d61ab048b52763dfe186458, type: 3}
   m_bombguidPrefab: {fileID: 8343512302550149420, guid: 4f1eb6afc7854dd42a5d8dc03af1b116, type: 3}
   m_EffectBombParticle: {fileID: 8450109398865278895, guid: bded4b7df7bd98a4dba10495532b92f9, type: 3}
-  m_FirePad: {fileID: 934081849222050753, guid: 3b6c40de3c268b64f869ca2581eced37, type: 3}
   m_damageGuidGraphic:
   - {fileID: 0}
   - {fileID: 0}
@@ -10994,6 +10994,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Skills: []
+--- !u!65 &5543937066535310278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844935055122862596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0311903, y: 2.0083961, z: 1}
+  m_Center: {x: 0.015595039, y: 0.91321313, z: 0}
 --- !u!1 &8844935055167428732
 GameObject:
   m_ObjectHideFlags: 0

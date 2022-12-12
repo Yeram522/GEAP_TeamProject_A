@@ -44,12 +44,14 @@ public class BossMonsterCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            BossHP.value -= 0.03f;
-            HPtxt.text = (BossHP.value*100).ToString();
-        }
 
         SpawnBoss(BossHP.value);
+
+        if (BossHP.value == 0.0f)
+        {
+            Destroy(currentBoss);
+            Destroy(this.gameObject);
+
+        }
     }
 }

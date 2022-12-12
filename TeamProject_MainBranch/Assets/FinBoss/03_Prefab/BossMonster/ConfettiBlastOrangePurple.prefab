@@ -9597,7 +9597,8 @@ GameObject:
   - component: {fileID: 8926056142227714870}
   - component: {fileID: 8926056142241918860}
   - component: {fileID: 8926056142241910264}
-  m_Layer: 0
+  - component: {fileID: 3487809665740200082}
+  m_Layer: 11
   m_Name: ConfettiBlastOrangePurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13067,7 +13068,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -13263,7 +13264,7 @@ ParticleSystem:
     colliderQueryMode: 0
     radiusScale: 1
     primitives:
-    - {fileID: 0}
+    - {fileID: 3487809665740200082}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -14273,3 +14274,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3487809665740200082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8926056142227622390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421f4f74720b06e45be5f9c73c009585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

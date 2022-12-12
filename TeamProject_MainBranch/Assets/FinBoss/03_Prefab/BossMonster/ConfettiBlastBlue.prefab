@@ -4813,6 +4813,7 @@ GameObject:
   - component: {fileID: 8450109398864988575}
   - component: {fileID: 8450109398883300573}
   - component: {fileID: 8450109398885227031}
+  - component: {fileID: 8288712032349365900}
   m_Layer: 11
   m_Name: ConfettiBlastBlue
   m_TagString: Untagged
@@ -9489,6 +9490,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8288712032349365900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450109398865278895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421f4f74720b06e45be5f9c73c009585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8450109398865316679
 GameObject:
   m_ObjectHideFlags: 0
