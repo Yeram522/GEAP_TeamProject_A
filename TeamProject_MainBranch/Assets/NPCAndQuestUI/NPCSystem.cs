@@ -122,6 +122,7 @@ public class NPCSystem : MonoBehaviour
     }
 
 
+
     private void SetDialog()
     {
         UI_Dialog.SetActive(true);

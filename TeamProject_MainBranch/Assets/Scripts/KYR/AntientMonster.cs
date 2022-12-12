@@ -27,7 +27,11 @@ public class AntientMonster : MonoBehaviour
 
 
         if (GameObject.Find("UI").transform.GetChild(0).GetComponent<Slider>().value == 0.0f)
+        {
+            GameObject.FindWithTag("UIManager").GetComponent<QuestManagerSystem>().SendMessage("NPCSecondtQuestMessage");
             Destroy(this.gameObject);
+            GameObject.Find("SceneLoader").GetComponent<GameSceneManager>().SendMessage("clearBossStage");
+        }
     }
 
     private void setBossSkillSets()
