@@ -96,6 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeMobTypes: []
   rangedMobTypes: []
+  intervalSpawnMobAndPlayer: 20
   amountMobs: 10
   ratioRangedMobs: 0
   spawnRange: 15
+  MobsList: []
+  sound: {fileID: 8300000, guid: 5b95811a149e3834092daafce55b5862, type: 3}

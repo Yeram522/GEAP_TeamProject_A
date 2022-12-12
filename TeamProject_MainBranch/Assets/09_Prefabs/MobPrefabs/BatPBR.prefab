@@ -1255,6 +1255,7 @@ MonoBehaviour:
   dropItemPrefab: []
   bullet: {fileID: 6531793022095801764, guid: 917f18af28a3ddd4b842a8c8ff08eeb3, type: 3}
   usingBullet: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5b95811a149e3834092daafce55b5862, type: 3}
   state: 0
 --- !u!114 &8752616975459974042
 MonoBehaviour:
@@ -1445,3 +1446,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2fde96ce5dfae4da1ba8b3eeeb8d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTrigger: 0

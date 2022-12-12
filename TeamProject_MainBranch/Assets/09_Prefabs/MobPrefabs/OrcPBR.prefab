@@ -562,6 +562,7 @@ MonoBehaviour:
   dropItemPrefab: []
   bullet: {fileID: 0}
   usingBullet: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5b95811a149e3834092daafce55b5862, type: 3}
   state: 0
 --- !u!114 &7611078538426760613
 MonoBehaviour:

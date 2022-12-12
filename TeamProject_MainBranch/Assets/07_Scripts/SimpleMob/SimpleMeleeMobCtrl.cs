@@ -29,6 +29,8 @@ public class SimpleMeleeMobCtrl : MonoBehaviour
 
     public GameObject usingBullet;
 
+    public AudioClip sound;
+    
     enum State
     {
         Walking,
@@ -196,6 +198,8 @@ public class SimpleMeleeMobCtrl : MonoBehaviour
 
         GameObject.FindWithTag("UIManager").GetComponent<QuestManagerSystem>().SendMessage("NPCFirstQuestMessage");
 
+        AudioSource.PlayClipAtPoint (sound, transform.position);
+        
         gameObject.SetActive(false);
 	}
 	

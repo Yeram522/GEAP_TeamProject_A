@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb2fde96ce5dfae4da1ba8b3eeeb8d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTrigger: 0
 --- !u!1 &6502014206356078335
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +688,7 @@ MonoBehaviour:
   dropItemPrefab: []
   bullet: {fileID: 0}
   usingBullet: {fileID: 0}
+  sound: {fileID: 8300000, guid: 5b95811a149e3834092daafce55b5862, type: 3}
   state: 0
 --- !u!114 &6502014206942616373
 MonoBehaviour:
@@ -721,6 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32d9083d95d253418710fc6cb15c079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 4
 --- !u!1 &6502507544289949393
 GameObject:
   m_ObjectHideFlags: 0

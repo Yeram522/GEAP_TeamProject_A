@@ -28,6 +28,8 @@ public class SimpleRangeMobCtrl : MonoBehaviour
 
     public GameObject usingBullet;
 
+    public AudioClip sound;
+
     enum State
     {
         Walking,
@@ -225,6 +227,8 @@ public class SimpleRangeMobCtrl : MonoBehaviour
         status.died = true;
         DropItem();
         GameObject.FindWithTag("UIManager").GetComponent<QuestManagerSystem>().SendMessage("NPCFirstQuestMessage");
+        
+        AudioSource.PlayClipAtPoint (sound, transform.position);
         
         this.gameObject.SetActive(false);
 	}
