@@ -21,7 +21,7 @@ public class SkillDamage : MonoBehaviour
         if (other.gameObject.tag.Equals("Enemy"))
         {
             other.SendMessage("Damage", attack);
-            Debug.Log(other.name + "을 때림");
+            Debug.Log(other.name + "을 스킬로 때림");
         }
     }
 }

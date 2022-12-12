@@ -24,6 +24,12 @@ public class ChangeSceneCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+
+        GameObject player = GameObject.Find("Player");
+        GameObject pet = GameObject.Find("Pet");
+
+        pet.transform.position = player.transform.position;
+
         gameSceneManager.SendMessage("ActivateScene", gameObject.name);
     }
 }
