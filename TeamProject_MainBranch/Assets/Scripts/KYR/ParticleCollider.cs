@@ -6,7 +6,9 @@ public class ParticleCollider : MonoBehaviour
 {
     private void OnParticleCollision(GameObject other)
     {
-       // if(other.tag == "Player")
-        Debug.Log("파티클 충돌");
+        Debug.Log(other.name);
+        if (other.name != "Player") return;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatus>().SendMessage("AttackPlayer", 1.0f);
     }
 }

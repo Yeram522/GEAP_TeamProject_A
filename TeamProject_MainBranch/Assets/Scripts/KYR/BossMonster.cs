@@ -79,6 +79,13 @@ public class BossMonster : MonoBehaviour
           
     }
 
+    public void Damage(AttackInfo damage)
+    {
+        BossMonsterCtrl ctrl = GameObject.Find("BossController").GetComponent<BossMonsterCtrl>();
+        ctrl.BossHP.value -= (damage.attackPower * 0.005f);
+        GameObject.Find("BossController").GetComponent<BossMonsterCtrl>().HPtxt.text = (ctrl.BossHP.value*100).ToString(); 
+    }
+
     private void setBossSkillSets(Element element)
     {
         initBossNormalSkills();
@@ -220,6 +227,10 @@ public class BossMonster : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, player.position, MoveSpeed * Time.deltaTime);
 
             }
+            else
+            {
+                player.GetComponent<PlayerStatus>().SendMessage("AttackPlayer",0.1f);
+            }
             yield return new WaitForEndOfFrame();
         }
         yield return null;
@@ -230,6 +241,7 @@ public class BossMonster : MonoBehaviour
         yield return new WaitForSeconds(5.0f);
         m_Animator.SetTrigger("EndAttack");
         StopCoroutine(moveToward());
+        m_Animator.SetInteger("AttackType",0);
         m_isChasing = true;
         yield return null;
 

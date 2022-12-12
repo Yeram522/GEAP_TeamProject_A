@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/InGameScene/FinalBoss.unity
     guid: 0e76feef57df5614683ef24554fd1828
+  - enabled: 1
+    path: Assets/01_Scenes/InGameScene/TitleScene.unity
+    guid: eae7bc697d5c7bb49a2873179a0f1901
+  - enabled: 1
+    path: Assets/01_Scenes/InGameScene/SuccessScene.unity
+    guid: c7fa2da1ca16cb94599b4fb90546c4ca
+  - enabled: 1
+    path: Assets/01_Scenes/InGameScene/FailScene.unity
+    guid: df736f5e757465340a23a7f8d98a6427
   m_configObjects: {}

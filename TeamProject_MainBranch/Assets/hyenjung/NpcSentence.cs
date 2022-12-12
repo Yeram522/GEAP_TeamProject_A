@@ -16,7 +16,7 @@ public class NpcSentence : MonoBehaviour
 
 
 
-    Player player;
+    Player_HJ  player;
 
 
 
@@ -34,7 +34,7 @@ public class NpcSentence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<Player_HJ>();
         Is_D_Finish = true;
         Quest_Clear = false;
         a = true;
@@ -55,13 +55,14 @@ public class NpcSentence : MonoBehaviour
             System.Array.Resize(ref sentences, 2);
             sentences[0] = "마을을 구할 준비는 끝난것같아요! 얼른 마을을 구해주세요!";
             sentences[1] = "ㅁ..무서운건 싫으니까 이..일단 알겠습니다...!!!";
-            Invoke("Load_scene", 5f);
+            player.GetComponent<Player_HJ>().enabled = false;
+
         }
     }
     void Text()
     {
 
-        if (GameObject.Find("Player").GetComponent<Player>().firstQ == false && Quest_Clear == false&&a)
+        if (GameObject.Find("Player").GetComponent<Player_HJ>().firstQ == false && Quest_Clear == false&&a)
         {
             Is_D_Finish = false;
             Time.timeScale = 0;
@@ -71,16 +72,16 @@ public class NpcSentence : MonoBehaviour
             sentences[3] = "NPC \n기본공격이랑 뭐 그런거 할 줄 아시죠?";
             sentences[4] = "어... 네....?";
             sentences[5] = "NPC \n아니 왜~ 그거 있잖아요~";
-            sentences[6] = "NPC \nWASD키로 이동하고! LShift키로 달리고! 스페이스바로 점프하고!";
+            sentences[6] = "NPC \nWASD키로 이동하고! LShift키로 달리고!";
             sentences[7] = "NPC \n일단 해봐요!";
             Is_D_Finish = true;
             Time.timeScale = 1;
         }
 
-        else if (GameObject.Find("Player").GetComponent<Player>().firstQ == true && Quest_Clear == false && a)
+        else if (GameObject.Find("Player").GetComponent<Player_HJ>().firstQ == true && Quest_Clear == false && a)
         {
             Is_D_Finish = false;
-            if (GameObject.Find("Player").GetComponent<Player>().senendQ == false && Quest_Clear == false && a)
+            if (GameObject.Find("Player").GetComponent<Player_HJ>().senendQ == false && Quest_Clear == false && a)
             {
 
                 sentences[0] = "NPC\n잘하시네요!! 역시 우리 마을을 구할 용사님!";
@@ -94,7 +95,7 @@ public class NpcSentence : MonoBehaviour
                 Is_D_Finish = true;
 
             }
-            else if (GameObject.Find("Player").GetComponent<Player>().senendQ == true && Quest_Clear == false &&a)
+            else if (GameObject.Find("Player").GetComponent<Player_HJ>().senendQ == true && Quest_Clear == false &&a)
             {
                 System.Array.Resize(ref sentences, 4);
                 sentences[0] = "NPC\n싸울 준비는 끝난 것 같아요! 이제 마을을 구해주세요!!";
@@ -108,10 +109,6 @@ public class NpcSentence : MonoBehaviour
         }
     }
 
-    void Load_scene()
-    {
-        SceneManager.LoadScene("SecondMap");
-    }
 }
 
 
