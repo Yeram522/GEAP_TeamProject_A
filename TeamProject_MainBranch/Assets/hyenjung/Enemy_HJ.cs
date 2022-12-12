@@ -13,7 +13,7 @@ public class Enemy_HJ : MonoBehaviour
 
     void Awake()
     {
-        mat = GetComponent<MeshRenderer>().material;
+        mat = transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().material;
         curHealth = maxHealth;
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();

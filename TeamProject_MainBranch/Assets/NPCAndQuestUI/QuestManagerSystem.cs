@@ -12,7 +12,6 @@ public class QuestManagerSystem : MonoBehaviour
     private GameObject QuestListContents;
 
     public List<QuestInfo> ActiveQuestsList;
-
     void Start()
     {
         QuestListContents = this.transform.GetChild(0).GetChild(1).GetChild(0).GetChild(0).gameObject;
@@ -50,7 +49,7 @@ public class QuestManagerSystem : MonoBehaviour
     {
         for (int i = 0; i < ActiveQuestsList.Count; i++)
         {
-            if (ActiveQuestsList[i].targetNPC.name != "NPC1") continue;
+            //if (ActiveQuestsList[i].targetNPC.name != "NPC1") continue;
             if (ActiveQuestsList[i].questType != 0) continue;
 
             ActiveQuestsList[i].completeCnt++;
@@ -62,4 +61,19 @@ public class QuestManagerSystem : MonoBehaviour
         
     }
 
+    public void NPCSecondtQuestMessage()
+    {
+        for (int i = 0; i < ActiveQuestsList.Count; i++)
+        {
+           // if (ActiveQuestsList[i].targetNPC.name != "NPC1") continue;
+            if (ActiveQuestsList[i].questType != 1) continue;
+            if(ActiveQuestsList[i].completeCnt>=1) continue;
+            ActiveQuestsList[i].completeCnt++;
+
+            Text T_PrgressCnt = ActiveQuestsList[i].gameObject.transform.GetChild(1).GetComponent<Text>();
+
+            T_PrgressCnt.text = "(" + ActiveQuestsList[i].completeCnt + "/" + ActiveQuestsList[i].totalCnt + ")";
+        }
+
+    }
 }

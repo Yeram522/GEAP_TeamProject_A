@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class BossMonsterCtrl : MonoBehaviour
@@ -52,6 +53,7 @@ public class BossMonsterCtrl : MonoBehaviour
             Destroy(currentBoss);
             Destroy(this.gameObject);
 
+            SceneManager.LoadScene("SuccessScene");
         }
     }
 }

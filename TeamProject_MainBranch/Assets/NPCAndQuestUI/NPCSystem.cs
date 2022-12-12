@@ -55,6 +55,7 @@ public class NPCSystem : MonoBehaviour
         PlayerLock = false;
         m_QuestCount = m_QuestInfos.Count;
         UI_MANAGER = GameObject.FindGameObjectWithTag("UIManager");
+        UI_Dialog = UI_MANAGER.transform.GetChild(1).gameObject;
         Quest_MANAGER = UI_MANAGER.GetComponent<QuestManagerSystem>();
         MainCam = GameObject.FindGameObjectWithTag("MainCamera");
 
@@ -120,6 +121,7 @@ public class NPCSystem : MonoBehaviour
         }
 
     }
+
 
 
     private void SetDialog()

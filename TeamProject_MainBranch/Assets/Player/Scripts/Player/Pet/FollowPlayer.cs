@@ -37,15 +37,25 @@ public class FollowPlayer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(isOutofrange)
+        if (isOutofrange)
         {
-            nav.SetDestination(target.transform.position);
-            anim.SetBool("isMove", true);
+            try
+            {
+                nav.SetDestination(target.transform.position);
+                anim.SetBool("isMove", true);
+            }
+            catch { }
         }
         else
         {
-            nav.SetDestination(transform.position);
-            anim.SetBool("isMove", false);
+            try
+            {
+                nav.SetDestination(transform.position);
+                anim.SetBool("isMove", false);
+            }
+            catch { }
+
+
         }
 
     }

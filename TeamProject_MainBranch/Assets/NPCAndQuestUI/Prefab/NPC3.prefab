@@ -1160,6 +1160,7 @@ GameObject:
   - component: {fileID: 754214363480823182}
   - component: {fileID: 5955689376557550297}
   - component: {fileID: 5955689376557550296}
+  - component: {fileID: 6210668893086255227}
   m_Layer: 0
   m_Name: NPC3
   m_TagString: Untagged
@@ -1251,7 +1252,7 @@ MonoBehaviour:
     ClearDialog: "\uB124??\uAC70\uB798\uD488\uBAA9\uC744 \uBABB\uCC3E\uC73C\uC168\uB2E4\uAD6C\uC694?
       \uD558..\uADF8\uB807\uB2E4\uBA74 \uADF8 \uAD34\uBB3C\uC774  \uAC00\uC838\uAC04
       \uAC78\uAC70\uC5D0\uC694.."
-    totalCnt: 10
+    totalCnt: 6
     completeCnt: 0
   - gameObject: {fileID: 0}
     targetNPC: {fileID: 0}
@@ -1259,12 +1260,12 @@ MonoBehaviour:
     contents: "\uAC70\uB798 \uD488\uBAA9 \uD68C\uC218\uD558\uAE30"
     queststringProgress: 0
     questDialog:
-    - "\uBD84\uBA85\uD574\uC694!! \uC720\uB839\uAC19\uC774\uC0DD\uAE34..\uC544\uB2C8!
-      \uC720\uB839\uBCF4\uB2E4 \uB354 \uC12C\uB729\uD558\uAC8C \uC0DD\uAE34 \uB140\uC11D\uC774
+    - "\uBD84\uBA85\uD574\uC694!! \uD638\uBC15\uAC19\uC774\uC0DD\uAE34..\uC544\uB2C8!
+      \uD638\uBC15\uBCF4\uB2E4 \uB354 \uC12C\uB729\uD558\uAC8C \uC0DD\uAE34 \uB140\uC11D\uC774
       \uAC00\uC838\uAC04\uAC8C \uD2C0\uB9BC\uC5C6\uC5B4\uC694.."
     - "\uADF8 \uAD34\uBB3C\uD55C\uD14C\uC11C \uAC70\uB798\uD488\uBAA9\uC744 \uC800\uC5D0\uAC8C
       \uB418\uCC3E\uC544 \uC8FC\uC2E4 \uC218 \uC788\uB098\uC694?"
-    defaultDialog: "\uC720\uB839\uC778\uC9C0 \uBB54\uC9C0..\uC0C1\uC0C1\uB9CC\uD574\uB3C4
+    defaultDialog: "\uD638\uBC15\uD574\uACE8\uC778\uC9C0 \uBB54\uC9C0..\uC0C1\uC0C1\uB9CC\uD574\uB3C4
       \uC18C\uB984\uB3CB\uC544\uC694!!!"
     ClearDialog: "\uAC10\uC0AC\uD569\uB2C8\uB2E4!!  \uC5B4\uB5A4 \uC720\uD615\uC758
       \uB3D9\uBC18\uC790\uB97C \uC6D0\uD558\uC138\uC694??"
@@ -1287,6 +1288,18 @@ MonoBehaviour:
     totalCnt: 1
     completeCnt: 0
   lastPlayerPos: {x: 0, y: 0, z: 0}
+--- !u!114 &6210668893086255227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5955689376557550311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5be46dc07de56940b3112a13094c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6005689111386994039
 GameObject:
   m_ObjectHideFlags: 0

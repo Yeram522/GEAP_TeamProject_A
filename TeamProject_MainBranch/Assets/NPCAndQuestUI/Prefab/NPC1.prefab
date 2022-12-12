@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 8859239147215352212}
   - component: {fileID: 2459824156724899579}
   - component: {fileID: 2459824156724899578}
+  - component: {fileID: 8646868223470091761}
   m_Layer: 0
   m_Name: NPC1
   m_TagString: Untagged
@@ -286,9 +287,9 @@ MonoBehaviour:
       \uC218 \uC788\uACA0\uB098?"
     defaultDialog: "\uB9DD\uCE58\uB97C \uCC3E\uC544\uC900\uB2E4\uBA74 \uAF2D \uB3C4\uC6C0\uB418\uB294
       \uC77C\uC744 \uD574\uC8FC\uC9C0..!"
-    ClearDialog: "\uD760..\uADF8\uB7FC \uAC70\uC778\uAC19\uC740 \uB140\uC11D\uC774
+    ClearDialog: "\uD760..\uADF8\uB7FC \uBCF4\uB77C \uBC8C\uB808 \uAC19\uC740 \uB140\uC11D\uC774
       \uAC00\uC838\uAC14\uB098\uBCF4\uAD70.."
-    totalCnt: 10
+    totalCnt: 3
     completeCnt: 0
   - gameObject: {fileID: 0}
     targetNPC: {fileID: 0}
@@ -296,7 +297,7 @@ MonoBehaviour:
     contents: "\uACE0\uB300\uBCF4\uC2A4\uB85C\uBD80\uD130 \uB9DD\uCE58 \uD68C\uC218\uD558\uAE30"
     queststringProgress: 0
     questDialog:
-    - "\uADF8 \uAC70\uB300\uD55C \uB140\uC11D\uC73C\uB85C\uBD80\uD130 \uB9DD\uCE58\uB97C
+    - "\uADF8 \uBC8C\uB808 \uB140\uC11D\uC73C\uB85C\uBD80\uD130 \uB9DD\uCE58\uB97C
       \uCC3E\uC544\uC640 \uC904 \uC218 \uC788\uACA0\uB098?"
     defaultDialog: "\uB0B4 \uB9DD\uCE58..\uC815\uB9D0 \uC18C\uC911\uD55C \uAC70\uC600\uB294\uB370......."
     ClearDialog: "\uC6A9\uC0AC\uB2D8\uC774 \uAD6C\uD574\uC900 \uB9DD\uCE58\uB85C
@@ -335,6 +336,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &8646868223470091761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459824156724899581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5be46dc07de56940b3112a13094c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2780402811371862703
 GameObject:
   m_ObjectHideFlags: 0

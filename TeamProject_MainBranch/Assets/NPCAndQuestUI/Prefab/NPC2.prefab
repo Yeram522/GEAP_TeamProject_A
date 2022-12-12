@@ -1329,6 +1329,7 @@ GameObject:
   - component: {fileID: 1055688466421961574}
   - component: {fileID: 6230682841488591884}
   - component: {fileID: 6230682841488591885}
+  - component: {fileID: 7138272377194521937}
   m_Layer: 0
   m_Name: NPC2
   m_TagString: Untagged
@@ -1412,7 +1413,7 @@ MonoBehaviour:
     defaultDialog: "\uB3C4\uC640\uC900\uB2E4\uBA74 \uC6B0\uB9AC \uC9C0\uC5ED \uD2B9\uC0B0\uBB3C\uB85C
       \uB4E0\uB4E0\uD55C \uBAB8\uBCF4\uC2E0\uC744 \uD574\uC904\uAC8C!!"
     ClearDialog: "\uACE0\uB9C8\uC6CC!!"
-    totalCnt: 10
+    totalCnt: 5
     completeCnt: 0
   - gameObject: {fileID: 0}
     targetNPC: {fileID: 0}
@@ -1462,6 +1463,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &7138272377194521937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6230682841488591887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5be46dc07de56940b3112a13094c5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6307696499487437727
 GameObject:
   m_ObjectHideFlags: 0
