@@ -96,11 +96,11 @@ public class BossMonster : MonoBehaviour
     {
         skillHndl.m_Skills = new List<BossSkill>();
         skillHndl.m_Skills.Add(new BossSkill(10, 6, Special_02Bombing));
-        skillHndl.m_Skills.Add(new BossSkill(10, 5, Special_CreateTornado));
+        skillHndl.m_Skills.Add(new BossSkill(10, 6, Special_CreateTornado));
         skillHndl.m_Skills.Add(new BossSkill(10, 3, Normal_Throwing));
         skillHndl.m_Skills.Add(new BossSkill(10, 4, Normal_Rotating));
-        skillHndl.m_Skills.Add(new BossSkill(10, 30, Special_BossDefence));
-        skillHndl.m_Skills.Add(new BossSkill(10, 3, Normal_Chasing));
+        skillHndl.m_Skills.Add(new BossSkill(10, 20, Special_BossDefence));
+        skillHndl.m_Skills.Add(new BossSkill(10, 10, Normal_Chasing));
 
 
     }
@@ -110,7 +110,7 @@ public class BossMonster : MonoBehaviour
         switch(element)
         {
             case Element.Ice:
-                skillHndl.m_Skills.Add(new BossSkill(10, 5, IceElem_Freeze));
+                skillHndl.m_Skills.Add(new BossSkill(10, 4, IceElem_Freeze));
                 break;
             case Element.Rock:
                 break;
